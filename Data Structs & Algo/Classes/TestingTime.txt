@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+#include <cassert>
+
+#include "Time.h" 
+
+int main() {
+	
+	// Testing with ints and floats
+	{
+		Time Today;
+		// setters
+		Today.setHours(15);
+		Today.setMinutes(57);
+		Today.setSeconds(180);
+		// Comparison statements
+		assert(Today.timeInHours() == 16.00f);
+		assert(Today.timeInMinutes() == 960.00f);
+		assert(Today.timeInSeconds() == 57600.00f);
+	}
+	cout << "Success" << endl;
+}

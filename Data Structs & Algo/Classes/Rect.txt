@@ -1,0 +1,28 @@
+/*
+* This function contains methods for
+* performing operations on a Rectangle
+*/
+template <class DataType>
+class Rect
+{
+    // Rectangle Shape properties 
+    DataType width;
+    DataType length;
+
+public:
+    // Setters
+    void setWidth(const DataType width) { this->width = width; }
+    void setLength(const DataType length) { this->length = length; }
+
+    // Comparing Length with Width
+    // Returns true when Length is greater
+    bool lengthGreater() { return (length > width ? true : false); }
+
+    // Shape calculations for a Rectangle
+
+    // Finds and calculates the parameter
+    DataType perimeter() { return 2 * (length + width); }
+
+    // Finds and calculates the area
+    DataType area() { return (length * width); }
+};

@@ -1,0 +1,167 @@
+#include <iostream>
+#include "LinkedADTList.h"
+#include <new> //check isfull()
+
+/*
+* This file deals with dynamic/heap unsorted linked lists arrays
+* for creating items at runtime.
+*/
+
+// returns length of the linked list
+template<class DataType>
+int LinkedADTList<DataType>::GetLength() {
+    return length;
+}
+
+// This items adds items into the list
+// The list resets to the first item
+template<class DataType>
+bool LinkedADTList<DataType>::PutItem(const DataType &item) {
+    // This checks if bad memory allocation is reached
+    if (isFull())
+    {
+        return false;
+    }
+    Node<DataType>* newItem = new Node < DataType>;
+    newItem->value = item;
+    // This adds to an empty list without another item
+    if (start == nullptr)
+    {
+        ++length;
+        start = newItem;
+        start->next = nullptr;
+        cursor = start;
+        return true;
+    }
+    // This adds to an empty list when other items are present.
+    else
+    {
+        ++length;
+        newItem->next = start;
+        start = newItem;
+        cursor = start;
+        return true;
+    }
+    return false;
+}
+
+// This finds an item and returns it as a reference.
+// It also returns the exit status
+template<class DataType>
+bool LinkedADTList<DataType>::GetItem(const DataType &item, DataType &found_item) {
+    cursor = start;
+    while (cursor!=nullptr)
+    {
+        if (item == cursor->value)
+        {
+            found_item = cursor->value;
+            return true;
+        }
+        cursor = cursor->next;
+    }
+    return false;
+}
+
+// this item checks for bad allocation
+template<class DataType>
+bool LinkedADTList<DataType>::isFull() {
+    // This will try to create more heap memory and throw
+    // errors if it's unsuccessful.
+    try
+    {
+        Node<DataType> *allocate = new Node<DataType>;
+        delete allocate;
+    }
+    catch (std::bad_alloc& badAlloc)
+    {
+        return true;
+    }
+    return false;
+}
+
+// This will make the list empty.
+// The list resets to the first item
+template<class DataType>
+void LinkedADTList<DataType>::makeEmpty() {
+    Node<DataType> *Deleter;
+    ResetList();
+    while (cursor != nullptr)
+    {
+        Deleter = cursor;
+        cursor = cursor->next;
+        delete Deleter;
+    }
+    length = 0;
+    cursor = start = nullptr;
+}
+
+
+// This will delete an item in the list if it is present
+// it also resets the list to the first item
+template<class DataType>
+bool LinkedADTList<DataType>::DeleteItem(const int& item) {
+    Node<DataType>* Deleter = start;
+    Node<DataType>* Iteration = start;
+    // This checks if the item is the first one in the list
+    if (Iteration!=nullptr && Iteration->value == item)
+    {
+        Iteration = Iteration->next;
+        start = cursor = Iteration;
+        delete Deleter;
+        --length;
+        cursor = start;
+        return true;
+    }
+    // This deletes the item if it is not the 
+    // first item in the list.
+    else
+    {
+        while (Iteration != nullptr)
+        {
+            if (Iteration->next!=nullptr && Iteration->next->value == item)
+            {
+                Deleter = Iteration->next;
+                Iteration->next = Deleter->next;
+                delete Deleter;
+                --length;
+                cursor = start;
+                return true;
+            }
+            Iteration = Iteration->next;
+        }
+        cursor = start;
+    }
+    return false;
+}
+
+
+// This gets checks if there is an item available
+// and retrieves it
+template<class DataType>
+bool LinkedADTList<DataType>::GetNextIem(DataType &item) {
+    if (cursor == nullptr)
+    {
+        return false;
+    }
+    item = cursor->value;
+    cursor=cursor->next;
+    return true;
+}
+
+// This resets the list to the first item
+template<class DataType>
+void LinkedADTList<DataType>::ResetList() {
+    cursor = start;
+}
+
+// This deletes any memory created by the program
+template<class DataType>
+LinkedADTList<DataType>::~LinkedADTList() {
+    Node<DataType>* temp;
+    while(start != nullptr) {
+        temp = start;
+        start = temp->next;
+        delete temp;
+    }
+}
+

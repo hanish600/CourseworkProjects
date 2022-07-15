@@ -1,0 +1,16 @@
+class Road {
+public:
+  //setters
+  void setWidth(int feet);      // accepts feet
+  void setLength(int miles);    // accepts miles
+  //getters
+  int getWidth();               // returns feet
+  int getLength();              // returns miles
+
+  // calculates asphalt in miles
+  float asphalt(int thickness); // accepts inches, returns miles
+  
+private:
+  int width;                    // in feet
+  int length;                   // in miles 
+};

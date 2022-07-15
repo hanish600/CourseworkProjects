@@ -1,0 +1,28 @@
+#include "Road.h"
+
+/*
+* This file contains the methods
+* for performing operations on a Road
+*/
+
+// Sets current values in a Road
+void Road::setWidth(const int feet) { width = feet; }
+void Road::setLength(const int miles) { length = miles; }
+
+// Gets current values from a Road
+int Road::getWidth() { return width; }
+int Road::getLength() { return length; }
+
+/*
+* This function converts inches to feet to mile
+* and returns the miles of the asphalt
+*/
+float Road::asphalt(const int thickness)
+{
+	const int FEET_PER_MILE=5280;
+	const float cubicInch_TO_cubicFeet = 12.0f;
+	const float thickness_TO_Feet = (thickness / cubicInch_TO_cubicFeet);
+	const float TOTAL_FEET = (thickness_TO_Feet * width * length);
+	const float FEET_TO_MILE = TOTAL_FEET * FEET_PER_MILE;
+	return FEET_TO_MILE;
+}

@@ -1,0 +1,47 @@
+#include "Time.h"
+/*
+* The file starts by setting Hour,Minute, and Seconds
+* This file also calculates the time in 
+* Hours,Minutes, or Seconds
+* and returns it
+*/
+
+// Setters
+void Time::setHours(const int HOUR) { HOURS = HOUR; }
+void Time::setMinutes(const int MINUTE) { MINUTES = MINUTE; }
+void Time::setSeconds(const int SECOND) { SECONDS = SECOND; }
+
+
+// Takes the conversion rate of 60
+// Divides the conversion rate 
+// and converts seconds into minutes then into hours
+float Time::timeInHours()
+{
+	const float timeConversion = 60.0f;
+	const float NEW_MINUTES = MINUTES + (SECONDS / timeConversion);
+	const float NEW_HOURS = HOURS + (NEW_MINUTES / timeConversion);
+	return NEW_HOURS;
+}
+
+// Takes the conversion rate of 60
+// Divides and multiplies the conversion rate
+// and converts seconds into minutes and hours into minutes
+float Time::timeInMinutes()
+{
+	const float timeConversion = 60.0f;
+	float NEW_MINUTES = MINUTES + (SECONDS / timeConversion);
+	NEW_MINUTES += (HOURS * timeConversion);
+	return NEW_MINUTES;
+}
+
+
+// Takes the conversion rate of 60
+// Multiplies the conversion rate
+// and converts hours into minutes into seconds
+int Time::timeInSeconds()
+{
+	const float timeConversion = 60.0f;
+	const float NEW_MINUTES = MINUTES + (HOURS * timeConversion);
+	const float NEW_SECONDS = SECONDS + (NEW_MINUTES * timeConversion);
+	return NEW_SECONDS;
+}

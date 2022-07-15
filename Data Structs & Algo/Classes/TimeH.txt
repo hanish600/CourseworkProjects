@@ -1,0 +1,18 @@
+class Time
+{
+public:
+  //setters
+  void setHours(int hours);
+  void setMinutes(int minutes);
+  void setSeconds(int seconds);
+  
+  //getters  
+  float timeInHours();
+  float timeInMinutes();
+  int timeInSeconds();
+  
+private:
+	float HOURS;
+	float MINUTES;
+	float SECONDS;
+};

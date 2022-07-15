@@ -1,0 +1,88 @@
+#include "ArrayADTList.h"
+
+/*
+* This file deals with a unsorted 
+* fixed size list that is stored in the stack and
+* created at compile time
+*/
+
+
+// This finds the length of the list
+template <class Datatype>
+int ArrayADTList<Datatype>::GetLength() {
+    return length;
+}
+
+// This checks if the list is full
+// This also adds an item to the list
+template<class DataType>
+bool ArrayADTList<DataType>::PutItem(const DataType &item) {
+    if (!isFull())
+    {
+        items[length++] = item;
+        return true;
+    }
+    return false;
+}
+
+// This retrieves the content in the list
+// if the item is present in the list
+template<class DataType>
+bool ArrayADTList<DataType>::GetItem(const DataType& item, DataType& found_item) {
+    found_item = false;
+    for (int i = 0; i < length; ++i)
+    {
+        if (items[i] == item)
+        {
+            found_item = items[i];
+            return true;
+        }
+    }
+    return false;
+}
+
+// This checks if the max size is reached
+template<class DataType>
+bool ArrayADTList<DataType>::isFull() {
+    return (length == MAX_SIZE);
+}
+
+// This hides all the items of the list.
+// if the items are no longer needed
+template<class DataType>
+void ArrayADTList<DataType>::makeEmpty() {
+    length = 0;
+}
+
+// This deletes an item if it is present
+template<class DataType>
+bool ArrayADTList<DataType>::DeleteItem(const int &item) {
+    for (int i=0; i < length; ++i)
+    {
+        if (items[i] == item)
+        {
+            items[i] = items[--length];
+            return true;
+        }
+    }
+    return false;
+}
+
+// This resets the list before the first item
+template<class DataType>
+void ArrayADTList<DataType>::ResetList() {
+    cursor = -1;
+}
+
+// This gets the next item in the list
+// if the there is an item
+template<class DataType>
+bool ArrayADTList<DataType>::GetNextIem(DataType &item) {
+    ++cursor;
+    if (cursor < length)
+    {
+        item = items[cursor];
+        return true;
+    }
+    return false;
+}
