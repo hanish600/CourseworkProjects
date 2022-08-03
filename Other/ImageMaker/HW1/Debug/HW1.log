@@ -1,0 +1,4 @@
+﻿  HW1.cpp
+C:\Users\hanis\Desktop\HW1\HW1.cpp(25,31): warning C4101: 'msg': unreferenced local variable
+C:\Users\hanis\Desktop\HW1\HW1.cpp(35,32): warning C4101: 'msg': unreferenced local variable
+C:\Users\hanis\Desktop\HW1\HW1.cpp(215): fatal error C1075: '{': no matching token found
