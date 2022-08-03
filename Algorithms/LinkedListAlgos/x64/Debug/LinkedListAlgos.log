@@ -1,0 +1,3 @@
+﻿  LinkedListAlgos.cpp
+C:\Users\hanis\Desktop\Algos\LinkedListAlgos\LinkedListAlgos.cpp(49,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  LinkedListAlgos.vcxproj -> C:\Users\hanis\Desktop\Algos\LinkedListAlgos\x64\Debug\LinkedListAlgos.exe

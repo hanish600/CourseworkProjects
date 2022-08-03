@@ -1,0 +1,10 @@
+﻿  Algorithms.cpp
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(36,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(39,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(104,17): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(107,34): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(111,34): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(135,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(181,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hanis\Desktop\Algos\Algorithms\Algorithms.cpp(208,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Algorithms.vcxproj -> C:\Users\hanis\Desktop\Algos\Algorithms\x64\Debug\Algorithms.exe
