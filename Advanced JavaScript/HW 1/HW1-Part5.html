@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="firstNum">1st Number: </label>
+        <input type="text" id="firstNum"><br>
+        <label for="secondNum">2nd Number: </label>
+        <input type="text" id="secondNum"><br>
+        <input type="button" value="Multiply"
+        onclick="mult()"> 
+        <input type="button" value="Divide"
+        onclick="div()"> 
+    </form>
+    <script>
+        function mult()
+        {
+            let num1=document.getElementById("firstNum").value;
+            let num2=document.getElementById("secondNum").value;
+            alert(num1*num2);
+        }
+        function div()
+        {
+            if (document.getElementById("secondNum").value==0)
+            {
+                alert("undefined");
+            }
+            let num1=document.getElementById("firstNum").value;
+            let num2=document.getElementById("secondNum").value;
+            alert(num1/num2);
+        }
+    </script>
+</body>
+</html>
