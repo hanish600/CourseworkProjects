@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let items=prompt("Enter the items to be squared with commas: ");
+        let myArr=items.split(",");
+        document.write("Output: ");
+        document.write("{");
+        for (var item=0; item<myArr.length;item++)
+        {
+            myArr[item]=Math.pow(myArr[item],2);
+            document.write(myArr[item]);
+            if (item!=myArr.length-1)
+            {
+                document.write(', ');
+            }
+        }
+        document.write("}");
+    </script>
+</body>
+</html>

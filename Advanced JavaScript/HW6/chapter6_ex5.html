@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function vowelCount(str)
+        {
+            let countA=0;
+            let countE=0;
+            let countI=0;
+            let countO=0;
+            let countU=0;
+            for (let i=0;i<str.length();++i)
+            {
+                if (str.charAt(i)=='a' || str.charAt(i)=='A')
+                {
+                    ++countA;
+                }
+                else if (str.charAt(i)=='e' || str.charAt(i)=='E')
+                {
+                    ++countE;
+                }
+                else if (str.charAt(i)=='i' || str.charAt(i)=='I')
+                {
+                    ++countI;
+                }
+                else if (str.charAt(i)=='o' || str.charAt(i)=='O')
+                {
+                    ++countO;
+                }
+                else if (str.charAt(i)=='u' || str.charAt(i)=='U')
+                {
+                    ++countU;
+                }
+                else
+                {
+                    continue;
+                }
+            }           
+            let newMap = new Map();
+            newMap.set("a",countA);
+            newMap.set("e",countE);
+            newMap.set("i",countI);
+            newMap.set("o",countO);
+            newMap.set("u",countU);
+            return newMap;
+        }
+        let item=prompt("Enter the string to map: ");
+        let mapped=vowelCount(item);
+    </script>
+</body>
+</html>

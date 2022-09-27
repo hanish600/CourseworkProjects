@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let items=prompt("Enter the unique values with commas: ");
+        let myArr=items.split(",");
+        let mySet=new Set(myArr);
+        let txt="";
+        mySet.forEach(function(value) {
+            txt+=value;
+            
+        });
+        document.write("Output: ")
+        document.write("{");
+        for (var i=0;i<txt.length;++i)
+        {
+            document.write(txt[i]);
+            if (i<txt.length-1)
+            {
+                document.write(", ");
+            }
+        }
+        document.write("}");
+    </script>
+</body>
+</html>

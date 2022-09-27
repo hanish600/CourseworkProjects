@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Arr
+        {
+            constructor()
+            {
+                this.myArr=new Array(maxItems).fill(0);
+                this.count=0;
+                this.maxItems=0;
+            }
+            [Symbol.iterator]()
+            {
+                return {
+                    next: ()=>
+                    {
+                        if (count<maxItems){
+                            return {done:false, value:'t'};
+                        }
+                        else
+                        {
+                            return {done:true, value:undefined};
+                        }
+                    }
+                }
+            }
+            push(value)
+            {
+                this.myArr.push(value);
+                ++maxItems;
+            }
+            pop()
+            {
+                this.myArr.pop();
+            }
+        }
+        let newObj=new Arr();
+        let data = newObj[Symbol.iterator]();
+        document.write(data.next().value);
+    </script>
+</body>
+</html>

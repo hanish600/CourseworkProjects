@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(prev,curr)
+        {
+            return prev+curr;
+        }
+        let items=prompt("Enter the items to be reduced with commas and end with a comma: ");
+        let myArr=Array();
+        let txt="";
+        // Parsing requires ending with ',' for reduce to work
+        for (let i=0;i<items.length;++i)
+        {
+            if (items[i]!=',')
+            {
+                txt+=items[i];
+            }
+            else
+            {
+                myArr.push(parseInt(txt));
+                txt="";
+            }
+        }  
+        let mySum=myArr.reduce((prevVal,currVal) => prevVal + currVal,0);
+        document.write("Output: ");
+        document.write("{");
+        document.write(mySum);
+        document.write("}");
+    </script>
+</body>
+</html>
