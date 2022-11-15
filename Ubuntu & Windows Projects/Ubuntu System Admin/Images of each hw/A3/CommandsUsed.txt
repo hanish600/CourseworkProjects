@@ -1,0 +1,15 @@
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+cd /etc/apt/
+ls
+cat sources.list
+lsb_release -sc
+xdg-open /etc
+sudo -s
+apt-get update
+wget -q -O - "https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb stable main" >> /etc/apt/sources.list.d/google.list
+sudo apt-get update
+sudo apt install google-chrome-stable
+google chrome &
+cd /etc/apt/sources.list.d/
+cat google.list

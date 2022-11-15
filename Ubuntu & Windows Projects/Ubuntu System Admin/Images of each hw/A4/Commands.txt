@@ -1,0 +1,22 @@
+sudo -i
+ls /dev/sd*
+fdisk /dev/sdb
+n
+p
+1
+
+
+w
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install xfsprogs
+mkfs.xfs /dev/sdb1
+mount /dev/sdb1 /mnt
+sudo nano /etc/fstab
+cd /mnt
+ls -la
+addgroup newmnt
+chown -R root:newmnt /mnt
+useradd newusr
+sudo visudo
+umount /dev/sdb1

@@ -1,0 +1,43 @@
+man setfacl
+man groupadd
+groups
+man sudo
+sudo groupadd read_sec_files
+groups
+sudo groupadd write_sec_files
+sudo adduser reader
+sudo adduser writer
+man usermod
+sudo -i
+usermod -a -G read_sec_files reader
+usermod -a -G write_sec_files writer
+groups reader
+groups writer
+cd /var/tmp
+mkdir CS497
+ls
+ls -l CS497
+ls -ld CS497
+man touch
+touch myFile.txt
+date > myFile.txt
+uname -a >> myFile.txt
+whoami >> myFile.txt
+ip addr >> myFile.txt
+cat myFile.txt
+sudo mv /var/tmp/CS497 /home/hanish600/Desktop/CS497
+cd ..
+sudo chown hanish600 CS497
+ls -ld CS497
+setfacl -m group:read_sec_files:r CS497
+setfacl -m group:write_sec_files:rw CS497
+getfacl CS497
+setfacl -m o:000 CS497
+su who
+cd CS497
+wc myFile.txt >> myFile.txt
+cat myFile.txt
+man wc
+ls -la
+ls -la >> myFile.txt
+cat myFile.txt

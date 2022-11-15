@@ -1,0 +1,12 @@
+Bash Rot13Ceasar.sh
+1
+2
+3
+f
+result=$()
+echo $result
+Function name 
+local name
+Cat 
+Nano filename
+tr
