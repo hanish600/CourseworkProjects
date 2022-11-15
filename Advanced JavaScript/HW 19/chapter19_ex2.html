@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form>
+        <p><label for="feedback">Feedback Form:</label><br></p>
+        <textarea id="feedback" name="feedback"></textarea><br><br>
+        <input type="submit" value="Submit Form">
+
+    </form>
+    <script>
+        document.getElementById("feedback").addEventListener("blur",profanityCheck);
+        function profanityCheck()
+        {
+            let form = document.forms[0];
+            let formVal=form["feedback"].value
+            let check = formVal.includes("~!@#$") || formVal.includes("$%^&*");
+            if (check) {alert("No profanity please!");}
+            else {
+                alert("Thanks for your input.");
+                form.submit();
+            }
+        }
+    </script>
+</body>
+</html>

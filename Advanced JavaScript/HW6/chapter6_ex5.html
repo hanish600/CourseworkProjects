@@ -15,7 +15,7 @@
             let countI=0;
             let countO=0;
             let countU=0;
-            for (let i=0;i<str.length();++i)
+            for (let i=0;i<str.length;++i)
             {
                 if (str.charAt(i)=='a' || str.charAt(i)=='A')
                 {
@@ -52,6 +52,11 @@
         }
         let item=prompt("Enter the string to map: ");
         let mapped=vowelCount(item);
+        console.log("a's: ",mapped.get("a"))
+        console.log("e's: ",mapped.get("e"))
+        console.log("i's: ",mapped.get("i"))
+        console.log("o's: ",mapped.get("o"))
+        console.log("u's: ",mapped.get("u"))
     </script>
 </body>
 </html>
